@@ -6,32 +6,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Contact Us", home_contactUs_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Patients List", patients_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
+        <% if user_signed_in? %>
+          <li class="nav-item">
           <%= link_to "Add Patient", new_patient_path, class:"nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
-        </li>
-
-        <li class="nav-item">
+          </li>
+          <li class="nav-item">
+          <%= link_to "Patients List", patients_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
-        </li>
-        
-        <li class="nav-item">
-          <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
-        </li>
+          </li>
+        <% else %>
+          <li class="nav-item">
+          <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+          </li>
 
+          <li class="nav-item">
+          <%= link_to "Contact Us", home_contactUs_path, class:"nav-link" %>
+          </li>
+        <% end %>
 
       </ul>
       <form class="d-flex">
