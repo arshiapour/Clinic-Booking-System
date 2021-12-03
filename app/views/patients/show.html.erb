@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>First name:</strong>
@@ -20,5 +20,5 @@
   <%= @patient.phone %>
 </p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Edit', edit_patient_path(@patient), class:"btn btn-warning" %> 
+<%= link_to 'Back', patients_path, class:"btn btn-secondary" %>
