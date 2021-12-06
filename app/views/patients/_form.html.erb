@@ -32,6 +32,15 @@
     <%= form.text_field :phone, class:"form-control", placeholder:"ex: 011 111 11111" %>
   </div>
 
+  <div class="field form-group">
+    <%= form.label :appointment_id %>
+    <%# collection_select(:patient, :appointment_id, appointment.all, :id, {}, {:multiple => false}) %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :patient_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
   <br/>
 
   <div class="actions">
