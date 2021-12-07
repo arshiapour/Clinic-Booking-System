@@ -31,10 +31,11 @@
     <%= form.label :phone %>
     <%= form.text_field :phone, class:"form-control", placeholder:"ex: 011 111 11111" %>
   </div>
-
+    <br/>
   <div class="field form-group">
     <%= form.label :appointment_id %>
-    <%# collection_select(:patient, :appointment_id, appointment.all, :id, {}, {:multiple => false}) %>
+    <br/>
+    <%= form.collection_select :appointment_id, Appointment.order(:name), :id, :name, class:"form-control" %>
   </div>
 
   <div class="field form-group">

@@ -10,25 +10,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <br/><br/>
+  <div class="field form-group">
     <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <%= form.datetime_select :start_time, style:"form-control" %>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
     <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
+    <%= form.datetime_select :end_time, style:"form-control"  %>
   </div>
-
-  <div class="field">
+  <br/>
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, style:"form-control"  %>
+  </div>
+  <br/>
+  <div class="field form-group">
     <%# form.label :user_id %>
     <% if current_user.email == "admin@admin.com" %>
     <%= form.number_field :user_id, id: :appointment_user_id, value:current_user.id, type: :hidden %>
     <%end%>  
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div>
+    <%= form.submit  class:"actions btn btn-success" %>
   </div>
 <% end %>

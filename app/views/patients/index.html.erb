@@ -8,6 +8,7 @@
       <th>Last name</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>Appointment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +21,9 @@
         <td><%= patient.last_name %></td>
         <td><%= patient.email %></td>
         <td><%= patient.phone %></td>
+        <td><%= patient.appointment_id %></td>
         <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+       <!-- <td><%= link_to 'Edit', edit_patient_path(patient) %></td> -->
         <td><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

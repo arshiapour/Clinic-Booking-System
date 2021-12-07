@@ -33,6 +33,7 @@ class PatientsController < ApplicationController
         format.json { render :show, status: :created, location: @patient }
         #Send confirmation email
         UserMailer.appointmentConfirmation(@patient).deliver
+        
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
